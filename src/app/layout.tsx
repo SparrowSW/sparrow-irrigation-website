@@ -1,30 +1,33 @@
 import type { Metadata } from "next";
 import { Inter, Noto_Sans_Arabic } from "next/font/google";
 import "./globals.css";
+import { LanguageProvider } from "@/contexts/LanguageContext";
+import { Toaster } from "sonner";
 
-const inter = Inter({ subsets: ["latin"] });
-const notoSansArabic = Noto_Sans_Arabic({ subsets: ["arabic"] });
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const arabic = Noto_Sans_Arabic({
+  subsets: ["arabic"],
+  variable: "--font-arabic",
+});
 
 export const metadata: Metadata = {
-  title: "Sparrow - Professional Irrigation Controllers for Egyptian Gardens",
-  description: "Locally engineered irrigation controllers designed for Egyptian villas and gardens. Reliable, Arabic-supported, and built for our climate.",
-  keywords: "irrigation controller, Egypt, gardening, villa irrigation, Sparrow",
-  authors: [{ name: "Sparrow Irrigation" }],
-  openGraph: {
-    title: "Sparrow Irrigation Controllers",
-    description: "Professional irrigation solutions for Egyptian gardens",
-    type: "website",
-  },
+  title: "Sparrow – Professional Irrigation Control, Engineered in Egypt",
+  description:
+    "Premium irrigation controllers with Arabic support and competitive prices.",
+  alternates: { canonical: "https://sparrowirrigation.com" },
 };
 
 export default function RootLayout({
   children,
-}: {
-  children: React.ReactNode;
-}) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" dir="ltr">
-      <body className={`${inter.className} antialiased`}>{children}</body>
-    </html>
+    <LanguageProvider>
+      <html lang="en" dir="ltr" className={`${inter.variable} ${arabic.variable}`}>
+        <body className="bg-slate-950 text-white antialiased">
+          {children}
+          <Toaster richColors />
+        </body>
+      </html>
+    </LanguageProvider>
   );
 }

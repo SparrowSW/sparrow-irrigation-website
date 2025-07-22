@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 
-export default function Pricing() {
+export default function OurController() {
   const plans = [
     {
       name: "Sparrow Basic",
@@ -47,41 +47,41 @@ export default function Pricing() {
   ];
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-20 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900">
+          <h2 className="text-3xl lg:text-4xl font-bold text-foreground font-semibold">
             Choose Your Controller
           </h2>
-          <p className="mt-4 text-xl text-gray-600">
+          <p className="mt-4 text-xl text-muted-foreground font-semibold">
             Select the perfect Sparrow controller for your garden size
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-3 gap-8 mx-auto max-w-fit">
           {plans.map((plan, index) => (
             <Card
               key={index}
-              className={`relative p-8 ${
-                plan.popular ? "border-blue-500 border-2" : ""
+              className={`relative p-8 glass-card transition-all duration-300 hover:shadow-xl ${
+                plan.popular ? "border-primary" : ""
               }`}
             >
               {plan.popular && (
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                  <span className="bg-blue-600 text-white px-4 py-1 rounded-full text-sm font-semibold">
+                  <span className="bg-primary text-primary-foreground px-4 py-1 rounded-full text-sm font-semibold">
                     Most Popular
                   </span>
                 </div>
               )}
 
               <div className="text-center mb-8">
-                <h3 className="text-2xl font-bold text-gray-900">{plan.name}</h3>
+                <h3 className="text-2xl font-bold text-foreground">{plan.name}</h3>
                 <div className="mt-4">
-                  <span className="text-4xl font-bold text-gray-900">
+                  <span className="text-4xl font-bold text-foreground">
                     EGP {plan.price}
                   </span>
                 </div>
-                <p className="mt-2 text-gray-600">{plan.stations} Stations</p>
+                <p className="mt-2 text-muted-foreground">{plan.stations} Stations</p>
               </div>
 
               <ul className="space-y-4 mb-8">
@@ -98,7 +98,7 @@ export default function Pricing() {
                         clipRule="evenodd"
                       />
                     </svg>
-                    <span className="text-gray-700">{feature}</span>
+                    <span className="text-muted-foreground">{feature}</span>
                   </li>
                 ))}
               </ul>
@@ -106,9 +106,9 @@ export default function Pricing() {
               <Button
                 className={`w-full ${
                   plan.popular
-                    ? "bg-blue-600 hover:bg-blue-700"
-                    : "bg-gray-900 hover:bg-gray-800"
-                }`}
+                    ? "bg-primary text-primary-foreground hover:bg-primary/90"
+                    : "bg-secondary text-secondary-foreground hover:bg-secondary/90"
+                } transition-colors duration-200`}
               >
                 Pre-Order {plan.name}
               </Button>

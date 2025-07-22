@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 20% 98%; /* Light Blue-Gray for a fresh feel */
+    --foreground: 220 20% 20%; /* Darker text for contrast */
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 20% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 20% 20%;
+
+    --primary: 225 40% 20%; /* #182b55 - slightly adjusted for vibrancy */
+    --primary-foreground: 0 0% 98%; /* White */
+
+    --secondary: 215 60% 40%; /* #43629b - more vibrant */
+    --secondary-foreground: 0 0% 98%; /* White */
+
+    --muted: 210 40% 85%; /* Lighter blue for subtle backgrounds */
+    --muted-foreground: 220 20% 40%; /* Medium gray for muted text */
+
+    --accent: 205 70% 55%; /* #5977b4 - more striking accent */
+    --accent-foreground: 0 0% 98%; /* White */
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 210 20% 90%; /* Soft border color */
+    --input: 210 20% 90%; /* Soft input border */
+    --ring: 225 40% 20%; /* Primary color for focus rings */
+
+    --radius: 0.75rem; /* Slightly larger radius for softer edges */
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 0 0% 98%;
+  }
+}
+
+@keyframes gradient-xy {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply font-sans bg-background text-foreground;
+  }
+
+  .snap-stop-always {
+    scroll-snap-stop: always;
+  }
+}
