@@ -32,13 +32,13 @@ export default function ComingSoon() {
 
   const content = {
     en: {
-      title: "Get Notified When Available",
-      placeholder: "Your email address",
+      title: "Be the First to Know",
+      placeholder: "Enter your email to receive updates and launch notifications",
       button: "Notify Me",
     },
     ar: {
-      title: "أعلمني عند التوفر",
-      placeholder: "بريدك الإلكتروني",
+      title: "كن أول من يعرف",
+      placeholder: "أدخل بريدك الإلكتروني لتصلك آخر التحديثات وإشعارات الإطلاق",
       button: "إرسال", // Changed from "أرسل" for better context in Arabic
     },
   };

@@ -15,8 +15,8 @@ const useLanguage = () => ({ lang: 'en' as 'en' | 'ar' });
 const testimonials = {
   en: [
     {
-      name: "Ahmed Hassan, Cairo",
-      text: "Perfect for my home garden. Easy to set and forget.",
+      name: "Ahmed H., Cairo",
+      text: "“Easy to use and reliable. I set it once and my garden takes care of itself.”",
     },
     {
       name: "Fatima Al-Rashid, Alexandria",
@@ -29,8 +29,8 @@ const testimonials = {
   ],
   ar: [
     {
-      name: "أحمد حسن، القاهرة",
-      text: "مثالي لحديقة منزلي، سهل الضبط والتشغيل.",
+      name: "أحمد ح., القاهرة",
+      text: "““سهل الاستخدام وموثوق. ضبطته مرة واحدة وحديقتي أصبحت تهتم بنفسها.””",
     },
     {
       name: "فاطمة الرشيد، الإسكندرية",

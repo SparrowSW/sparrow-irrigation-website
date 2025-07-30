@@ -3,6 +3,7 @@ import { Inter, Noto_Sans_Arabic } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import { Toaster } from "sonner";
+import DynamicLayout from "@/components/DynamicLayout";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const arabic = Noto_Sans_Arabic({
@@ -11,9 +12,9 @@ const arabic = Noto_Sans_Arabic({
 });
 
 export const metadata: Metadata = {
-  title: "Sparrow – Professional Irrigation Control, Engineered in Egypt",
+  title: "Sparrow – Smarter Irrigation. Designed for You.",
   description:
-    "Premium irrigation controllers with Arabic support and competitive prices.",
+    "Reliable, weather-resistant controllers — locally engineered in Egypt, made to last, and priced for real value.",
   alternates: { canonical: "https://sparrowirrigation.com" },
 };
 
@@ -24,6 +25,7 @@ export default function RootLayout({
     <LanguageProvider>
       <html lang="en" dir="ltr" className={`${inter.variable} ${arabic.variable}`}>
         <body className="bg-slate-950 text-white antialiased">
+          <DynamicLayout />
           {children}
           <Toaster richColors />
         </body>

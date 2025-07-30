@@ -28,7 +28,7 @@ export default function Contact() {
       name: "Name",
       email: "Email",
       message: "Message",
-      button: "Send",
+      button: "Send Message",
       address: "Cairo, Egypt",
       emailInfo: "info@sparrowirrigation.com",
       phone: "+20 2 XXXX XXXX",

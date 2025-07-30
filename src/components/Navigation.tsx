@@ -15,7 +15,9 @@ const useLanguage = () => {
 const navigationLinks = [
   { href: "#home", en: "Home", ar: "الرئيسية" },
   { href: "#products", en: "Products", ar: "المنتجات" },
-  { href: "#about", en: "About", ar: "عنّا" },
+  { href: "#about", en: "About Us", ar: "عنّا" },
+  { href: "#locate-us", en: "Locate Us", ar: "حدد موقعنا" },
+  { href: "#shop-sparrow", en: "Shop Sparrow", ar: "تسوق سبارو" },
   { href: "#contact", en: "Contact", ar: "اتصل" },
 ];
 

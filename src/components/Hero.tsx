@@ -1,4 +1,4 @@
-"use client";
+ "use client";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/contexts/LanguageContext";
 import GlassCard from "@/components/ui/GlassCard";
@@ -10,26 +10,26 @@ export default function Hero() {
  const content = {
    en: {
      badge: "Engineered in Egypt",
-     title: "Professional Irrigation Control",
-     subtitle: "Premium controllers with Arabic support at 30% less cost than Hunter X-Core",
+     title: "Smarter Irrigation. Designed for You.",
+     subtitle: "Reliable, weather-resistant controllers — locally engineered in Egypt, made to last, and priced for real value.",
      cta: "Get Notified",
      learn: "Learn More",
      features: [
-       { icon: Droplets, text: "Weather Resistant" },
-       { icon: Zap, text: "Easy Installation" },
-       { icon: Globe, text: "Arabic Support" }
+       { icon: Droplets, text: "Weatherproof" },
+       { icon: Zap, text: "Plug & Play" },
+       { icon: Globe, text: "Fully Arabic" }
      ]
    },
    ar: {
      badge: "صُنع في مصر",
-     title: "أنظمة ري احترافية",
-     subtitle: "جودة عالية مع دعم كامل للغة العربية وبسعر أقل ٣٠٪ من هانتر إكس كور",
+     title: "ريّ ذكي بتصميم يلبي احتياجاتك.",
+     subtitle: "أجهزة موثوقة ومقاومة للطقس – مصممة محليًا في مصر لتدوم وبسعر يناسب الجميع.",
      cta: "أعلمني",
      learn: "تعرّف أكثر",
      features: [
        { icon: Droplets, text: "مقاوم للطقس" },
-       { icon: Zap, text: "سهل التركيب" },
-       { icon: Globe, text: "دعم عربي" }
+       { icon: Zap, text: "سهل الاستخدام" },
+       { icon: Globe, text: "بدعم عربي كامل" }
      ]
    },
  };
@@ -127,7 +127,7 @@ export default function Hero() {
      </motion.div>
 
      {/* Main Content */}
-     <div className="relative z-10 max-w-5xl mx-auto">
+     <div className="relative z-10 max-w-5xl mx-auto pt-24">
        <motion.div
          initial={{ opacity: 0, y: 100 }}
          animate={{ opacity: 1, y: 0 }}
