@@ -2,8 +2,9 @@
 
 import { motion } from "framer-motion";
 import { useLanguage } from "@/contexts/LanguageContext";
+import Image from "next/image";
 
-export default function About() {
+export default function AboutPage() {
   const { lang } = useLanguage();
   const content = {
     en: {
@@ -32,25 +33,37 @@ export default function About() {
   const t = content[lang];
 
   return (
-    <section id="about" className="bg-accent py-20 px-4 sm:px-6 lg:px-8"> {/* Changed background to white */}
-      <div className="max-w-4xl mx-auto">
+    <section id="about" className="bg-background py-20 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }} // Added transition duration for smoother animation
+          transition={{ duration: 0.6 }}
         >
-          {/* Replaced GlassCard with a div styled to mimic the light theme cards */}
           <div
-            className="p-8 bg-accent rounded-xl border border-gray-200 shadow-lg text-center transition-all duration-300 hover:shadow-xl hover:-translate-y-1" // Light card styling, added hover effect
-            dir={lang === 'ar' ? 'rtl' : 'ltr'} // Set direction for content
+            className="p-8 bg-background rounded-xl border border-gray-200 shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
+            dir={lang === 'ar' ? 'rtl' : 'ltr'}
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-2 text-primary"> {/* Text color set to primary, added responsive font size */}
-              {t.title}
-            </h2>
-            <p className="text-xl text-gray-600 mb-8">{t.subtitle}</p>
-            <div className="text-lg text-gray-700 leading-relaxed space-y-4"> {/* Changed text-slate-300 to a darker gray for readability */}
-              {t.body.map((paragraph, index) => <p key={index}>{paragraph}</p>)}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+              <div>
+                <Image
+                  src="/placeholder-about.jpg"
+                  alt="About Sparrow"
+                  width={500}
+                  height={500}
+                  className="rounded-lg"
+                />
+              </div>
+              <div className="text-left">
+                <h2 className="text-3xl md:text-4xl font-bold mb-2 text-primary">
+                  {t.title}
+                </h2>
+                <p className="text-xl text-gray-600 mb-8">{t.subtitle}</p>
+                <div className="text-lg text-gray-700 leading-relaxed space-y-4">
+                  {t.body.map((paragraph, index) => <p key={index}>{paragraph}</p>)}
+                </div>
+              </div>
             </div>
           </div>
         </motion.div>

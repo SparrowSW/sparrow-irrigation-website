@@ -9,7 +9,7 @@ import { motion } from "framer-motion";
 import { toast } from "sonner";
 import { useLanguage } from "@/contexts/LanguageContext";
 
-export default function Contact() {
+export default function ContactPage() {
   const { lang } = useLanguage();
   const { register, handleSubmit, reset } = useForm<{
     name: string; email: string; message: string;
@@ -47,7 +47,7 @@ export default function Contact() {
   const t = content[lang];
 
   return (
-    <section id="contact" className="bg-accent py-20 px-4 sm:px-6 lg:px-8"> {/* Changed background to accent */}
+    <section id="contact" className="bg-background py-20 px-4 sm:px-6 lg:px-8"> 
       <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
         <motion.div
           initial={{ opacity: 0, x: lang === 'ar' ? 40 : -40 }} // Adjust initial x for RTL
@@ -55,19 +55,18 @@ export default function Contact() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          {/* Replaced GlassCard with a div styled to mimic the light theme cards */}
           <div
-            className="p-6 bg-white rounded-xl border border-gray-200 shadow-lg h-full flex flex-col justify-center" // Light card styling, added flex for vertical centering
+            className="p-6 bg-white rounded-xl border border-gray-200 shadow-lg h-full flex flex-col justify-center"
             dir={lang === 'ar' ? 'rtl' : 'ltr'} // Set direction for content
           >
-            <h3 className="text-2xl font-bold mb-4 text-primary">{t.title}</h3> {/* Text color set to primary, larger font */}
-            <p className="mb-2 text-text-dark"> {/* Dark text for contact info */}
+            <h3 className="text-2xl font-bold mb-4 text-primary">{t.title}</h3> 
+            <p className="mb-2 text-text-dark"> 
               <strong className="font-semibold">{lang === 'en' ? 'Address:' : 'العنوان:'}</strong> {t.address}
             </p>
-            <p className="mb-2 text-text-dark"> {/* Dark text for contact info */}
+            <p className="mb-2 text-text-dark"> 
               <strong className="font-semibold">{lang === 'en' ? 'Email:' : 'البريد الإلكتروني:'}</strong> <a href={`mailto:${t.emailInfo}`} className="text-primary hover:underline">{t.emailInfo}</a>
             </p>
-            <p className="text-text-dark"> {/* Dark text for contact info */}
+            <p className="text-text-dark"> 
               <strong className="font-semibold">{lang === 'en' ? 'Phone:' : 'الهاتف:'}</strong> <a href={`tel:${t.phone}`} className="text-primary hover:underline">{t.phone}</a>
             </p>
           </div>
@@ -79,31 +78,30 @@ export default function Contact() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          {/* Replaced GlassCard with a div styled to mimic the light theme cards */}
           <div
-            className="p-6 bg-white rounded-xl border border-gray-200 shadow-lg" // Light card styling
+            className="p-6 bg-white rounded-xl border border-gray-200 shadow-lg"
             dir={lang === 'ar' ? 'rtl' : 'ltr'} // Set direction for content
           >
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
               <input
                 {...register("name", { required: true })}
                 placeholder={t.name}
-                className="w-full px-4 py-2 rounded-md bg-gray-100 border border-gray-300 text-text-dark placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-colors" // Light theme input styles
+                className="w-full px-4 py-2 rounded-md bg-gray-100 border border-gray-300 text-text-dark placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
               />
               <input
                 {...register("email", { required: true })}
                 placeholder={t.email}
-                className="w-full px-4 py-2 rounded-md bg-gray-100 border border-gray-300 text-text-dark placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-colors" // Light theme input styles
+                className="w-full px-4 py-2 rounded-md bg-gray-100 border border-gray-300 text-text-dark placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
               />
               <textarea
                 {...register("message", { required: true })}
                 placeholder={t.message}
                 rows={4}
-                className="w-full px-4 py-2 rounded-md bg-gray-100 border border-gray-300 text-text-dark placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-colors" // Light theme input styles
+                className="w-full px-4 py-2 rounded-md bg-gray-100 border border-gray-300 text-text-dark placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
               />
               <button
                 type="submit"
-                className="bg-primary hover:bg-primary-dark text-white font-bold px-6 py-2 rounded-md transition-colors shadow-md" // Primary button style
+                className="bg-primary hover:bg-primary-dark text-white font-bold px-6 py-2 rounded-md transition-colors shadow-md"
               >
                 {t.button}
               </button>

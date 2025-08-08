@@ -16,7 +16,7 @@ const plans = {
   ],
 };
 
-export default function PricingCards() {
+export default function PricingPage() {
   const { lang } = useLanguage();
   const list = plans[lang];
   const content = {
@@ -38,7 +38,7 @@ export default function PricingCards() {
   const t = content[lang];
 
   return (
-    <section className="bg-accent py-20 px-4 sm:px-6 lg:px-8">
+    <section className="bg-background py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-12" dir={lang === 'ar' ? 'rtl' : 'ltr'}>
             <h2 className="text-3xl md:text-4xl font-bold text-primary">

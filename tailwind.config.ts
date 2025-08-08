@@ -5,19 +5,15 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        primary: "#192952",
-        secondary: "#4A90E2",
-        "light-blue": "#E8F2FF",
-        accent: "#F8FAFC",
-        "text-dark": "#1E293B",
-        "text-light": "#64748B",
-        success: "#10B981",
-        warning: "#F59E0B",
+        primary: "#A1C1D9",
+        background: "#F8F7F1",
+        text: "#333333",
       },
       animation: {
         "gradient-shift": "gradient 14s ease infinite",
         float: "float 12s ease-in-out infinite",
         "fade-up": "fade-up 1.4s ease-out forwards",
+        "pulse-bg": "pulse-bg 10s ease-in-out infinite",
       },
       keyframes: {
         gradient: {
@@ -33,6 +29,10 @@ const config: Config = {
         "fade-up": {
           "0%": { opacity: "0", transform: "translateY(80px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
+        },
+        "pulse-bg": {
+          "0%, 100%": { backgroundColor: "#F9FAFB" },
+          "50%": { backgroundColor: "#FFFFFF" },
         },
       },
     },

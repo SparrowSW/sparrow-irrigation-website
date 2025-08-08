@@ -3,7 +3,8 @@ import { Inter, Noto_Sans_Arabic } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import { Toaster } from "sonner";
-import DynamicLayout from "@/components/DynamicLayout";
+import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const arabic = Noto_Sans_Arabic({
@@ -24,9 +25,10 @@ export default function RootLayout({
   return (
     <LanguageProvider>
       <html lang="en" dir="ltr" className={`${inter.variable} ${arabic.variable}`}>
-        <body className="bg-slate-950 text-white antialiased">
-          <DynamicLayout />
+        <body className="bg-background text-text antialiased">
+          <Navigation />
           {children}
+          <Footer />
           <Toaster richColors />
         </body>
       </html>

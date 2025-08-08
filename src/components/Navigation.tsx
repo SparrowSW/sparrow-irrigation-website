@@ -1,24 +1,18 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import clsx from "clsx";
-
-// Dummy context for demonstration - replace with your actual implementation
-// import { useLanguage } from "@/contexts/LanguageContext";
-const useLanguage = () => {
-    const [lang, setLang] = useState<'en' | 'ar'>('en');
-    return { lang, setLang };
-};
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const navigationLinks = [
-  { href: "#home", en: "Home", ar: "الرئيسية" },
-  { href: "#products", en: "Products", ar: "المنتجات" },
-  { href: "#about", en: "About Us", ar: "عنّا" },
-  { href: "#locate-us", en: "Locate Us", ar: "حدد موقعنا" },
-  { href: "#shop-sparrow", en: "Shop Sparrow", ar: "تسوق سبارو" },
-  { href: "#contact", en: "Contact", ar: "اتصل" },
+  { href: "/", en: "Home", ar: "الرئيسية" },
+  { href: "/about", en: "About", ar: "عنّا" },
+  { href: "/how-it-works", en: "How It Works", ar: "كيفية العمل" },
+  { href: "/pricing", en: "Pricing", ar: "الأسعار" },
+  { href: "/contact", en: "Contact", ar: "اتصل بنا" },
 ];
 
 export default function Navigation() {
@@ -34,94 +28,93 @@ export default function Navigation() {
   };
 
   return (
-    <header 
-      className="fixed top-4 left-1/2 z-50 w-[95%] max-w-10xl -translate-x-1/2"
+    <header
+      className="fixed top-0 left-0 z-50 w-full bg-white shadow-md"
       dir={lang === 'ar' ? 'rtl' : 'ltr'}
     >
-      <div className="rounded-2xl border border-white/10 bg-primary/10 p-4 shadow-lg backdrop-blur-lg">
-        <div className="flex items-center justify-between">
-          {/* Logo */}
-          <Link href="#home" className="text-2xl font-bold text-blue-500 transition-opacity hover:opacity-80">
-            Sparrow
-          </Link>
+      <div className="flex items-center justify-between max-w-6xl mx-auto p-4">
+        {/* Logo */}
+        <Link href="/" className="flex items-center space-x-2 text-2xl font-bold text-primary transition-opacity hover:opacity-80">
+          <Image src="/sparrow_logo_new.jpg" alt="Sparrow Logo" width={40} height={40} />
+          <span className="text-text">Sparrow</span>
+        </Link>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden items-center gap-6 md:flex">
-            {navigationLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="text-text-dark/80 transition-colors hover:text-white"
-              >
-                {link[lang]}
-              </Link>
-            ))}
-          </nav>
-
-          {/* Desktop Actions */}
-          <div className="hidden items-center gap-4 md:flex">
-            <button
-              onClick={toggleLanguage}
-              className="flex h-9 w-9 items-center justify-center rounded-full border border-text-dark/20 text-sm font-semibold text-text-dark/80 transition-colors hover:bg-white/30"
-              aria-label="Toggle Language"
-            >
-              {lang === "en" ? "AR" : "EN"}
-            </button>
+        {/* Desktop Navigation */}
+        <nav className="hidden items-center gap-6 md:flex">
+          {navigationLinks.map((link) => (
             <Link
-              href="#coming-soon"
-              className="rounded-full bg-blue-600 px-5 py-2 text-white shadow-[0_0_15px_rgba(37,99,235,0.5)] transition-all hover:bg-blue-500 hover:shadow-[0_0_20px_rgba(37,99,235,0.8)]"
+              key={link.href}
+              href={link.href}
+              className="text-text transition-colors hover:text-primary"
             >
-              {lang === "en" ? "Coming Soon" : "قريباً"}
+              {link[lang]}
             </Link>
-          </div>
+          ))}
+        </nav>
 
-          {/* Mobile Menu Toggle */}
+        {/* Desktop Actions */}
+        <div className="hidden items-center gap-4 md:flex">
           <button
-            className="md:hidden"
-            onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label="Toggle menu"
+            onClick={toggleLanguage}
+            className="flex h-9 w-9 items-center justify-center rounded-full border border-gray-300 text-sm font-semibold text-text transition-colors hover:bg-gray-200"
+            aria-label="Toggle Language"
           >
-            {isMobileMenuOpen ? <X className="text-white" /> : <Menu className="text-white" />}
+            {lang === "en" ? "AR" : "EN"}
           </button>
+          <Link
+            href="/contact"
+            className="rounded-full bg-primary px-5 py-2 text-white shadow-lg transition-all hover:bg-primary/90"
+          >
+            {lang === "en" ? "Contact Us" : "اتصل بنا"}
+          </Link>
         </div>
 
-        {/* Mobile Menu */}
-        <div
-          className={clsx(
-            "overflow-hidden transition-all duration-300 ease-in-out md:hidden",
-            isMobileMenuOpen ? "max-h-96" : "max-h-0"
-          )}
+        {/* Mobile Menu Toggle */}
+        <button
+          className="md:hidden"
+          onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}
+          aria-label="Toggle menu"
         >
-          <nav className="flex flex-col space-y-4 pt-6 text-lg">
-            {navigationLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="text-white/80 hover:text-white"
-                onClick={handleLinkClick}
-              >
-                {link[lang]}
-              </Link>
-            ))}
-             <button
-              onClick={() => {
-                toggleLanguage();
-                handleLinkClick();
-              }}
-              className="w-full text-left font-semibold text-white/80 hover:text-white"
-              aria-label="Toggle Language"
-            >
-               {lang === "en" ? "العربية" : "English"}
-            </button>
+          {isMobileMenuOpen ? <X className="text-text" /> : <Menu className="text-text" />}
+        </button>
+      </div>
+
+      {/* Mobile Menu */}
+      <div
+        className={clsx(
+          "overflow-hidden transition-all duration-300 ease-in-out md:hidden bg-background",
+          isMobileMenuOpen ? "max-h-96" : "max-h-0"
+        )}
+      >
+        <nav className="flex flex-col space-y-4 p-4 text-lg">
+          {navigationLinks.map((link) => (
             <Link
-              href="#coming-soon"
-              className="mt-4 block rounded-full bg-blue-600 px-5 py-2 text-center text-white shadow-[0_0_15px_rgba(37,99,235,0.5)] transition-all hover:bg-blue-500 hover:shadow-[0_0_20px_rgba(37,99,235,0.8)]"
+              key={link.href}
+              href={link.href}
+              className="text-text hover:text-primary"
               onClick={handleLinkClick}
             >
-              {lang === "en" ? "Get Notified" : "اشترك الآن"}
+              {link[lang]}
             </Link>
-          </nav>
-        </div>
+          ))}
+           <button
+            onClick={() => {
+              toggleLanguage();
+              handleLinkClick();
+            }}
+            className="w-full text-left font-semibold text-text hover:text-primary"
+            aria-label="Toggle Language"
+          >
+             {lang === "en" ? "العربية" : "English"}
+          </button>
+          <Link
+            href="/contact"
+            className="mt-4 block rounded-full bg-primary px-5 py-2 text-center text-white shadow-lg transition-all hover:bg-primary/90"
+            onClick={handleLinkClick}
+          >
+            {lang === "en" ? "Contact Us" : "اتصل بنا"}
+          </Link>
+        </nav>
       </div>
     </header>
   );

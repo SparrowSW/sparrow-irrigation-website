@@ -17,12 +17,12 @@ const steps = {
   ],
 };
 
-export default function HowItWorks() {
+export default function HowItWorksPage() {
   const { lang } = useLanguage();
   const list = steps[lang];
 
   return (
-    <section className="bg-accent py-20 px-4 sm:px-6 lg:px-8">
+    <section className="bg-background py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 text-primary">
           {lang === "en" ? "How It Works" : "كيفية العمل"}
