@@ -12,7 +12,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
             <h3 className="text-lg font-bold">Sparrow</h3>
-            <p className="mt-2 text-sm">Making irrigation simple and efficient.</p>
+            <p className="mt-2 text-sm">Irregartion that lasts. Performance that stay.</p>
           </div>
           <div>
             <h3 className="text-lg font-bold">Quick Links</h3>

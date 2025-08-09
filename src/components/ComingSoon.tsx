@@ -32,7 +32,7 @@ export default function ComingSoon() {
 
   const content = {
     en: {
-      title: "Be the First to Know",
+      title: "Be the first to know",
       placeholder: "Enter your email to receive updates and launch notifications",
       button: "Notify Me",
     },

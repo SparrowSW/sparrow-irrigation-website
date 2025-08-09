@@ -9,32 +9,32 @@ import { useLanguage } from "@/contexts/LanguageContext";
 const featuresData = {
   en: [
     {
-      title: "Seasonal adjustment",
-      description: "This feature allows the system to automatically adjust watering schedules based on local weather conditions, saving water and ensuring optimal plant health throughout the year.",
+      title: "Engineered and manufactured in Egypt",
+      description: "Proudly designed and built in Egypt to handle our climate, soil, and everyday use.",
     },
     {
       title: "Arabic & English support",
-      description: "Our controllers offer full support for both Arabic and English languages, providing a user-friendly interface for a wider range of users.",
+      description: "Clear and accessible in both Arabic and English — no learning curve, no confusion.",
     },
     {
       title: "Simple rotating dial",
-      description: "The intuitive simple rotating dial makes programming and adjustments straightforward, even for first-time users, ensuring hassle-free operation.",
+      description: "Easily set schedules with a smooth rotating dial — no menus, no stress.",
     },
     {
-      title: "Engineered and manufactured in Egypt",
-      description: "Proudly designed and manufactured in Egypt, our products are built to meet local needs and withstand the specific environmental conditions of the region.",
+      title: "Seasonal adjustment",
+      description: "Adjusts with the seasons, so your plants get what they need — and you save water all year.",
     },
     {
       title: "Weatherproof design",
-      description: "Built with a robust weatherproof design, our controllers are protected against harsh outdoor elements, ensuring durability and reliable performance in all conditions.",
+      description: "Tough against rain, dust, and sun — built to handle the outdoors, year-round.",
     },
     {
       title: "Affordable and long-lasting",
-      description: "Our products offer exceptional value, combining affordability with long-lasting durability, providing a cost-effective and reliable irrigation solution.",
+      description: "Durability meets affordability — the way it should be.",
     },
     {
       title: "Easy to install and use",
-      description: "Designed for simplicity, our systems are incredibly easy to install and operate, allowing users to set up and manage their irrigation with minimal effort.",
+      description: "Up and running in minutes — no tools, no stress, no guesswork.",
     },
   ],
   ar: [
@@ -117,18 +117,18 @@ export default function ProductShowcase() {
         <div className="grid lg:grid-cols-2 gap-12 xl:gap-16 items-center">
           {/* Product Image Placeholder */}
           <motion.div
-             initial={{ opacity: 0, x: lang === 'ar' ? 50 : -50 }}
-             whileInView={{ opacity: 1, x: 0 }}
-             viewport={{ once: true, amount: 0.3 }}
-             transition={{ duration: 0.7, ease: "easeOut" }}
+            initial={{ opacity: 0, x: lang === 'ar' ? 50 : -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
           >
             {/* Light Theme: Switched to a floating card style */}
             <div className="rounded-2xl border border-gray-200 bg-white p-6 shadow-lg">
-               <div className="w-full h-96 bg-light-blue rounded-lg flex items-center justify-center border border-gray-300">
-                  <span className="text-secondary text-lg font-medium">
-                    {lang === 'en' ? 'Sparrow Controller Image' : 'صورة جهاز سبارو'}
-                  </span>
-                </div>
+              <div className="w-full h-96 bg-light-blue rounded-lg flex items-center justify-center border border-gray-300">
+                <span className="text-secondary text-lg font-medium">
+                  {lang === 'en' ? 'Sparrow Controller Image' : 'صورة جهاز سبارو'}
+                </span>
+              </div>
             </div>
           </motion.div>
 

@@ -13,7 +13,7 @@ export default function Hero() {
        line1: "Smarter Irrigation",
        line2: "Designed for You"
      },
-     subtitle: "Irrigation that Lasts. Performance that Stays.",
+     subtitle: "Built to Last",
      cta: "Get Notified",
      learn: "Learn More",
      features: [

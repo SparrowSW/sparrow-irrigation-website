@@ -16,10 +16,25 @@ export default function ContactPage() {
   }>();
 
   const onSubmit = async (data: any) => {
-    await new Promise((r) => setTimeout(r, 800));
-    console.log("Contact form:", data);
-    toast.success(lang === "en" ? "Message sent!" : "تم الإرسال!");
-    reset();
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        toast.success(lang === "en" ? "Message sent!" : "تم الإرسال!");
+        reset();
+      } else {
+        toast.error(lang === "en" ? "Failed to send message." : "فشل إرسال الرسالة.");
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      toast.error(lang === "en" ? "Failed to send message." : "فشل إرسال الرسالة.");
+    }
   };
 
   const content = {

@@ -7,6 +7,7 @@ const plans = {
   en: [
     { name: "Sparrow Basic", price: "EGP 1,200", stations: "2", features: ["Ideal for small gardens", "2-station control"] },
     { name: "Sparrow Pro", price: "EGP 1,800", stations: "4", features: ["Perfect for most homes", "4-station control"], popular: true },
+    { name: "Sparrow Plus", price: "EGP 2,000", stations: "6", features: ["For large gardens and commercial use", "6-station control"] },
     { name: "Sparrow Elite", price: "EGP 2,400", stations: "8", features: ["For large gardens and commercial use", "8-station precision control"] },
   ],
   ar: [
@@ -49,7 +50,7 @@ export default function ProductsPage() {
             </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-4 gap-8">
           {list.map((p, i) => (
             <motion.div
               key={p.name}
