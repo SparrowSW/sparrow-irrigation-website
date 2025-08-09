@@ -16,20 +16,20 @@ const plans = {
   ],
 };
 
-export default function PricingPage() {
+export default function ProductsPage() {
   const { lang } = useLanguage();
   const list = plans[lang];
   const content = {
       en: {
-          title: "Explore Our Models",
-          subtitle: "Different models. One standard of quality.",
+          title: "Choose Your Sparrow",
+          subtitle: "Built tough. No matter the size.",
           popular: "Most Popular",
           select: "Select Model",
           station: "Stations"
       },
       ar: {
-          title: "استعرض نماذجنا",
-          subtitle: "نماذج مختلفة. ومعيار جودة واحد.",
+          title: "اختر جهاز سبارو الخاص بك",
+          subtitle: "مصمم بقوة. مهما كان الحجم.",
           popular: "الأكثر مبيعًا",
           select: "اختر الجهاز",
           station: "محطات"
@@ -41,7 +41,7 @@ export default function PricingPage() {
     <section className="bg-background py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-12" dir={lang === 'ar' ? 'rtl' : 'ltr'}>
-            <h2 className="text-3xl md:text-4xl font-bold text-primary">
+            <h2 className="p-6 text-3xl md:text-4xl font-bold text-primary">
                 {t.title}
             </h2>
             <p className="text-lg text-gray-700 mt-2">

@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { useLanguage } from "@/contexts/LanguageContext";
 import Image from "next/image";
 
-export default function AboutPage() {
+export default function AboutUsPage() {
   const { lang } = useLanguage();
   const content = {
     en: {
@@ -19,7 +19,7 @@ export default function AboutPage() {
       ],
     },
     ar: {
-      title: "عن سبارو",
+      title: "عنّا",
       subtitle: "أنظمة ذكية مصممة من أجل هذه المنطقة. ومهندسة لتتفوق في الأداء.",
       body: [
         "سبارو هي شركة تكنولوجيا مصرية سريعة النمو، تطوّر أنظمة تحكم متقدمة للمياه، والأراضي، والبنية التحتية. وحدات التحكم في الري ليست سوى البداية ضمن مجموعة متوسعة من المنتجات. كل منتج نُصمّمه بدقة، ليناسب مناخ مصر ويؤدي بكفاءة في أقسى ظروف الخليج.",
@@ -42,13 +42,13 @@ export default function AboutPage() {
           transition={{ duration: 0.6 }}
         >
           <div
-            className="p-8 bg-background rounded-xl border border-gray-200 shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
+            className="p-6 bg-background rounded-xl border border-gray-200 shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
             dir={lang === 'ar' ? 'rtl' : 'ltr'}
           >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
               <div>
                 <Image
-                  src="/placeholder-about.jpg"
+                  src="/new_logo.jpg"
                   alt="About Sparrow"
                   width={500}
                   height={500}

@@ -48,7 +48,7 @@ export default function ContactPage() {
 
   return (
     <section id="contact" className="bg-background py-20 px-4 sm:px-6 lg:px-8"> 
-      <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
+      <div className="p-8 max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
         <motion.div
           initial={{ opacity: 0, x: lang === 'ar' ? 40 : -40 }} // Adjust initial x for RTL
           whileInView={{ opacity: 1, x: 0 }}

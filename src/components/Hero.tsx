@@ -9,8 +9,11 @@ export default function Hero() {
  const content = {
    en: {
      badge: "Engineered in Egypt",
-     title: "Smarter Irrigation, Designed for You",
-     subtitle: "Reliable, weather-resistant controllers — locally engineered in Egypt, made to last, and priced for real value.",
+     title: {
+       line1: "Smarter Irrigation",
+       line2: "Designed for You"
+     },
+     subtitle: "Irrigation that Lasts. Performance that Stays.",
      cta: "Get Notified",
      learn: "Learn More",
      features: [
@@ -21,8 +24,11 @@ export default function Hero() {
    },
    ar: {
      badge: "صُنع في مصر",
-     title: "ريّ ذكي بتصميم يلبي احتياجاتك",
-     subtitle: "أجهزة موثوقة ومقاومة للطقس – مصممة محليًا في مصر لتدوم وبسعر يناسب الجميع.",
+     title: {
+       line1: "ريّ ذكي",
+       line2: "بتصميم يلبي احتياجاتك"
+     },
+     subtitle: "ري يدوم. أداء يبقى.",
      cta: "أعلمني",
      learn: "تعرّف أكثر",
      features: [
@@ -52,7 +58,9 @@ export default function Hero() {
            transition={{ duration: 0.8, delay: 0.4 }}
            className="text-5xl md:text-7xl font-bold text-primary mb-6 leading-tight"
          >
-           {t.title}
+           {t.title.line1}
+           <br />
+           {t.title.line2}
          </motion.h1>
 
          <motion.p
@@ -61,7 +69,7 @@ export default function Hero() {
            transition={{ duration: 0.8, delay: 0.6 }}
            className="text-2xl md:text-3xl text-text-light mb-8 max-w-3xl mx-auto leading-relaxed font-semibold"
          >
-           Built to last.
+           {t.subtitle}
          </motion.p>
 
          <motion.div

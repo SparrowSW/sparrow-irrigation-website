@@ -9,10 +9,9 @@ import { useLanguage } from "@/contexts/LanguageContext";
 
 const navigationLinks = [
   { href: "/", en: "Home", ar: "الرئيسية" },
-  { href: "/about", en: "About", ar: "عنّا" },
+  { href: "/about", en: "About Us", ar: "عنّا" },
   { href: "/how-it-works", en: "How It Works", ar: "كيفية العمل" },
-  { href: "/pricing", en: "Pricing", ar: "الأسعار" },
-  { href: "/contact", en: "Contact", ar: "اتصل بنا" },
+  { href: "/products", en: "Products", ar: "المنتجات" },
 ];
 
 export default function Navigation() {
@@ -35,8 +34,8 @@ export default function Navigation() {
       <div className="flex items-center justify-between max-w-6xl mx-auto p-4">
         {/* Logo */}
         <Link href="/" className="flex items-center space-x-2 text-2xl font-bold text-primary transition-opacity hover:opacity-80">
-          <Image src="/sparrow_logo_new.jpg" alt="Sparrow Logo" width={40} height={40} />
-          <span className="text-text">Sparrow</span>
+          <Image src="/new_logo.jpg" alt="Sparrow Logo" width={80} height={80} />
+          {/* <span className="text-text">Sparrow</span> */}
         </Link>
 
         {/* Desktop Navigation */}
