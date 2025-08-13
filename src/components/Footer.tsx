@@ -19,7 +19,7 @@ export default function Footer() {
             <ul className="mt-2 space-y-2">
               <li>
                 <Link href="/about" className="hover:underline">
-                  About
+                  About Us
                 </Link>
               </li>
               <li>
@@ -29,12 +29,12 @@ export default function Footer() {
               </li>
               <li>
                 <Link href="/pricing" className="hover:underline">
-                  Pricing
+                  Products
                 </Link>
               </li>
               <li>
                 <Link href="/contact" className="hover:underline">
-                  Contact
+                  Contact Us
                 </Link>
               </li>
             </ul>
