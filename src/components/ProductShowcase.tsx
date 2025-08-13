@@ -111,7 +111,7 @@ export default function ProductShowcase() {
           transition={{ duration: 0.6 }}
           className="text-3xl md:text-4xl font-bold text-center mb-16 text-primary" // Light Theme: Dark text for heading
         >
-          {lang === "en" ? "Professional Features Built for Egypt" : "مميزات احترافية مناسبة لمصر"}
+          {lang === "en" ? "What You Get with Sparrow" : "مميزات احترافية مناسبة لمصر"}
         </motion.h2>
 
         <div className="grid lg:grid-cols-2 gap-12 xl:gap-16 items-center">

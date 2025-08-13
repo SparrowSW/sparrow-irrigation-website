@@ -34,7 +34,7 @@ export default function Navigation() {
       <div className="flex items-center justify-between max-w-6xl mx-auto p-4">
         {/* Logo */}
         <Link href="/" className="flex items-center space-x-2 text-2xl font-bold text-primary transition-opacity hover:opacity-80">
-          <Image src="/new_logo.jpg" alt="Sparrow Logo" width={80} height={80} />
+          <Image src="/Logo_Blue.svg" alt="Sparrow Logo" width={80} height={80} />
           {/* <span className="text-text">Sparrow</span> */}
         </Link>
 
