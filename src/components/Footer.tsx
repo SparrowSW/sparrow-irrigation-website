@@ -8,17 +8,17 @@ import Image from "next/image";
 export default function Footer() {
   const { lang } = useLanguage();
   return (
-    <footer className="bg-primary text-white w-full py-8">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <footer className="bg-primary text-white w-full py-4">
+      <div className="px-1 sm:px-1.5 lg:px-2">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Column 1: Brand/About */}
+          {/* Column 1: Logo */}
           <div className="flex flex-col items-start text-left">
             <Image src="/Logo_White.svg" alt="Sparrow Logo" width={80} height={80} style={{ objectFit: 'contain', objectPosition: 'left' }} />
-            <p className="text-sm mt-2">Irregartion that lasts. Performance that stay.</p>
+            <p className="text-sm mt-1">Irrigation that lasts. Performance that stays.</p>
           </div>
 
           {/* Column 2: Quick Links */}
-          <div className="flex flex-col items-start text-left">
+          <div className="text-left">
             <h3 className="text-lg font-bold">Quick Links</h3>
             <ul className="mt-2 space-y-2">
               <li><Link href="/about" className="hover:underline">About Us</Link></li>
@@ -29,7 +29,7 @@ export default function Footer() {
           </div>
 
           {/* Column 3: Connect With Us */}
-          <div className="flex flex-col items-start text-left">
+          <div className="text-left">
             <h3 className="text-lg font-bold">Connect With Us</h3>
             <div className="flex gap-4 mt-2">
               <a href="#" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors"><Facebook size={20} /></a>
@@ -38,11 +38,11 @@ export default function Footer() {
             </div>
           </div>
         </div>
+      </div>
 
-        {/* Copyright Section */}
-        <div className="mt-8 text-center text-sm">
-          <p>&copy; {new Date().getFullYear()} Sparrow. All rights reserved.</p>
-        </div>
+      {/* Copyright Section */}
+      <div className="container mx-auto mt-8 text-center text-sm">
+        <p>&copy; {new Date().getFullYear()} Sparrow. All rights reserved.</p>
       </div>
     </footer>
   );
