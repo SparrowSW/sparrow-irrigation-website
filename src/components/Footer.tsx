@@ -13,7 +13,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Column 1: Brand/About */}
           <div className="flex flex-col items-start text-left">
-            <Image src="/Logo_White.svg" alt="Sparrow Logo" width={120} height={120} style={{ objectFit: 'contain', objectPosition: 'left' }} />
+            <Image src="/Logo_White.svg" alt="Sparrow Logo" width={80} height={80} style={{ objectFit: 'contain', objectPosition: 'left' }} />
             <p className="text-sm mt-2">Irregartion that lasts. Performance that stay.</p>
           </div>
 

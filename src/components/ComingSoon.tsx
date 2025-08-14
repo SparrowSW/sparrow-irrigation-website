@@ -23,11 +23,33 @@ export default function ComingSoon() {
 
   const onSubmit = async (data: { email: string }) => {
     setLoading(true);
-    await new Promise((r) => setTimeout(r, 800)); // simulate API
-    console.log("Email collected:", data.email);
-    toast.success(lang === "en" ? "Thanks! We'll notify you." : "شكرًا! سنُعلمك.");
-    reset();
-    setLoading(false);
+    try {
+      const response = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email: data.email }),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        toast.success(lang === 'en' ? "Thanks! We'll notify you." : "شكرًا! سنُعلمك.");
+        reset();
+      } else {
+        if (response.status === 409) {
+          toast.error(lang === 'en' ? 'This email is already subscribed.' : 'هذا البريد الإلكتروني مشترك بالفعل.');
+        } else {
+          toast.error(result.error || (lang === 'en' ? 'An error occurred.' : 'حدث خطأ ما.'));
+        }
+      }
+    } catch (error) {
+      console.error('Submission error:', error);
+      toast.error(lang === 'en' ? 'An unexpected error occurred.' : 'حدث خطأ غير متوقع.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   const content = {

@@ -1,4 +1,4 @@
-import Navigation from "@/components/Navigation";
+import GraphicBanner from "@/components/GraphicBanner";
 import Hero from "@/components/Hero";
 import ProductShowcase from "@/components/ProductShowcase";
 import Testimonials from "@/components/Testimonials";
@@ -11,7 +11,9 @@ export default function Home() {
       
       <Hero />
       <ProductShowcase />
+      <GraphicBanner src="/optimize-your-garden.png" alt="Optimize your garden's watering today!" />
       <Testimonials />
+      <GraphicBanner src="/upgrade-water-management.png" alt="Upgrade to efficient water management today!" />
       <ComingSoon />
       
     </>

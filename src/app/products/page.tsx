@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useLanguage } from "@/contexts/LanguageContext";
+import GraphicBanner from "@/components/GraphicBanner";
 
 const plans = {
   en: [
@@ -100,7 +101,7 @@ export default function ProductsPage() {
             </motion.div>
           ))}
         </div>
-      </div>
+     </div>
     </section>
   );
 }

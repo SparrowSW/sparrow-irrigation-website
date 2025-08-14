@@ -6,9 +6,9 @@ import { useLanguage } from "@/contexts/LanguageContext";
 
 const steps = {
   en: [
-    { title: "Step 1 – Install", desc: "Mount unit and connect to valves and power" },
-    { title: "Step 2 – Set", desc: "Turn dials for schedule and season" },
-    { title: "Step 3 – Relax", desc: "Enjoy automatic daily watering" },
+    { title: "1. Install", desc: "Mount the box, plug in power and valves. Done in minutes." },
+    { title: "2. Set", desc: "Spin the dials to pick your watering schedule." },
+    { title: "3. Relax", desc: "Let Sparrow water your garden — rain or shine." },
   ],
   ar: [
     { title: "الخطوة ١ – التثبيت", desc: "قم بتثبيت الجهاز وتوصيل الصمامات والكهرباء" },
