@@ -45,7 +45,7 @@ export default function ContactPage() {
       message: "Message",
       button: "Send Message",
       address: "Cairo, Egypt",
-      emailInfo: "info@sparrowirrigation.com",
+      emailInfo: "sales@getsparrow.net",
       phone: "+20 2 XXXX XXXX",
     },
     ar: {
@@ -55,7 +55,7 @@ export default function ContactPage() {
       message: "الرسالة",
       button: "إرسال",
       address: "القاهرة، مصر",
-      emailInfo: "info@sparrowirrigation.com",
+      emailInfo: "sales@getsparrow.net",
       phone: "+20 2 XXXX XXXX",
     },
   };
