@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { Facebook, Twitter, Instagram } from "lucide-react";
+import { Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
 import Image from "next/image";
 
 export default function Footer() {
@@ -31,7 +31,9 @@ export default function Footer() {
           {/* Column 3: Connect With Us */}
           <div className="text-left">
             <h3 className="text-lg font-bold">Connect With Us</h3>
+            <p className="mt-2">Email: <a href="mailto:sales@getsparrow.net" className="hover:text-white transition-colors">sales@getsparrow.net</a></p>
             <div className="flex gap-4 mt-2">
+              <a href="https://www.linkedin.com/company/getsparrowegy" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors"><Linkedin size={20} /></a>
               <a href="#" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors"><Facebook size={20} /></a>
               <a href="#" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors"><Twitter size={20} /></a>
               <a href="#" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors"><Instagram size={20} /></a>

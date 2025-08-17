@@ -6,15 +6,15 @@ import GraphicBanner from "@/components/GraphicBanner";
 
 const plans = {
   en: [
-    { name: "Sparrow Basic", price: "EGP 1,200", stations: "2", features: ["Ideal for small gardens", "2-station control"] },
-    { name: "Sparrow Pro", price: "EGP 1,800", stations: "4", features: ["Perfect for most homes", "4-station control"], popular: true },
-    { name: "Sparrow Plus", price: "EGP 2,000", stations: "6", features: ["For large gardens and commercial use", "6-station control"] },
-    { name: "Sparrow Elite", price: "EGP 2,400", stations: "8", features: ["For large gardens and commercial use", "8-station precision control"] },
+    { name: "Sparrow Basic", price: "Coming Soon", stations: "2", features: ["Ideal for small gardens", "2-station control"] },
+    { name: "Sparrow Pro", price: "Coming Soon", stations: "4", features: ["Perfect for most homes", "4-station control"], popular: true },
+    { name: "Sparrow Plus", price: "Coming Soon", stations: "6", features: ["For large gardens and commercial use", "6-station control"] },
+    { name: "Sparrow Elite", price: "Coming Soon", stations: "8", features: ["For large gardens and commercial use", "8-station precision control"] },
   ],
   ar: [
-    { name: "سبارو بيزيك", price: "١٢٠٠ جنيه", stations: "٢", features: ["مثالي للحدائق الصغيرة", "تحكم في منطقتين"] },
-    { name: "سبارو برو", price: "١٨٠٠ جنيه", stations: "٤", features: ["مثالي لمعظم المنازل", "تحكم في ٤ مناطق"], popular: true },
-    { name: "سبارو إيليت", price: "٢٤٠٠ جنيه", stations: "٨", features: ["للمساحات الكبيرة والاستخدام التجاري", "تحكم دقيق في ٨ مناطق"] },
+    { name: "سبارو بيزيك", price: "قريباً", stations: "٢", features: ["مثالي للحدائق الصغيرة", "تحكم في منطقتين"] },
+    { name: "سبارو برو", price: "قريباً", stations: "٤", features: ["مثالي لمعظم المنازل", "تحكم في ٤ مناطق"], popular: true },
+    { name: "سبارو إيليت", price: "قريباً", stations: "٨", features: ["للمساحات الكبيرة والاستخدام التجاري", "تحكم دقيق في ٨ مناطق"] },
   ],
 };
 

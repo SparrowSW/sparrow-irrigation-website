@@ -44,7 +44,7 @@ export default function Hero() {
  return (
    <section
      id="home"
-     className="relative min-h-screen flex items-center justify-center p-4 bg-background animate-pulse-bg"
+     className="relative min-h-screen flex items-center justify-center p-4 bg-background"
    >
      <div className="relative z-10 max-w-5xl mx-auto pt-24 text-center">
        <motion.div
@@ -108,7 +108,7 @@ export default function Hero() {
                  <motion.div
                    animate={{ x: [0, 4, 0] }}
                    transition={{ duration: 1.5, repeat: Infinity }}
-                   className="w-4 h-4"
+                   className="w-4 h-4 flex items-center justify-center"
                  >
                    →
                  </motion.div>
