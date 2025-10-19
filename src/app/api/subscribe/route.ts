@@ -1,7 +1,9 @@
-import { NextResponse } from 'next/server';
-import { supabase } from '@/lib/supabaseClient';
+import { NextRequest, NextResponse } from 'next/server';
+import { Resend } from 'resend';
 
-export async function POST(request: Request) {
+const resend = new Resend(process.env.RESEND_API_KEY);
+
+export async function POST(request: NextRequest) {
   const { email } = await request.json();
 
   if (!email || typeof email !== 'string') {
@@ -15,18 +17,24 @@ export async function POST(request: Request) {
   }
 
   try {
-    const { data, error } = await supabase
-      .from('subscribers')
-      .insert([{ email }])
-      .select();
+    // Send email notification instead of storing in database
+    const { data, error } = await resend.emails.send({
+      from: process.env.CONTACT_EMAIL as string,
+      to: [process.env.CONTACT_EMAIL as string],
+      subject: `New Notification Subscriber: ${email}`,
+      html: `
+        <div style="font-family: Arial, sans-serif; line-height: 1.6;">
+          <h2 style="color: #005A9C;">New Notification Subscriber</h2>
+          <p>A new user has subscribed to receive notifications.</p>
+          <p><strong>Email:</strong> <a href="mailto:${email}">${email}</a></p>
+          <p>This email address has been added to the notification list.</p>
+        </div>
+      `,
+    });
 
     if (error) {
-      // Handle specific errors, e.g., unique constraint violation
-      if (error.code === '23505') { // PostgreSQL unique violation code
-        return NextResponse.json({ error: 'Email already subscribed' }, { status: 409 });
-      }
-      console.error('Supabase error:', error);
-      return NextResponse.json({ error: 'An error occurred' }, { status: 500 });
+      console.error('Resend error:', error);
+      return NextResponse.json({ error: 'Failed to send notification email' }, { status: 500 });
     }
 
     return NextResponse.json({ message: 'Successfully subscribed!', data }, { status: 201 });

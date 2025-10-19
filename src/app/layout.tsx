@@ -16,7 +16,6 @@ export const metadata: Metadata = {
   title: "Sparrow – Smarter Irrigation. Designed for You.",
   description:
     "Reliable, weather-resistant controllers — locally engineered in Egypt, made to last, and priced for real value.",
-  alternates: { canonical: "https://sparrowirrigation.com" },
   icons: {
     icon: [
       { url: '/favicon.ico' },
