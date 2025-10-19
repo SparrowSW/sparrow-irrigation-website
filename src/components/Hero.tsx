@@ -98,7 +98,7 @@ export default function Hero() {
              className="flex flex-col sm:flex-row gap-4 justify-center items-center"
            >
              <motion.a
-               href="/contact"
+               href="#coming"
                whileHover={{ scale: 1.05, boxShadow: "0 10px 40px rgba(96, 165, 250, 0.3)" }}
                whileTap={{ scale: 0.98 }}
                className="bg-primary text-white font-bold px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 group"
